@@ -1,0 +1,30 @@
+#header{
+    font-family: 'Libre Baskerville', serif;
+}
+body{
+    font-family: 'Playfair Display', serif;
+}
+.card-header{
+    font-family: 'Libre Baskerville', serif;
+}
+#inlineFormInputName{
+    display: inline-block;
+    border-radius: 25px;
+}
+.btn{
+   border-radius: 50%;
+}
+.search-box{
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+.card{
+    font-size: 20px;
+}
+#table-header{
+    font-size: 20px;
+    font-weight: 500;
+}
+.active{
+    font-weight: 600;
+}

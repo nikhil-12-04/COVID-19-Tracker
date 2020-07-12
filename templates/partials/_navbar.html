@@ -1,0 +1,43 @@
+<div class="container-fluid mb-5 ">
+
+    <ul class="nav nav-pills">
+        <li 
+        {% if '/' == request.path %}
+        class="nav-item text-light " 
+        {% else %}
+        class="nav-item text-light"
+        {% endif %}
+        >
+          <a id="overall" 
+          
+          {% if '/' == request.path %}
+            class="nav-link text-light" style="font-weight: 700;"
+            {% else %}
+            class="nav-link text-light"
+            {% endif %}
+            
+          
+          href="{% url 'index' %}">Overall Cases</a>
+        </li>
+        <li   {% if 'search' in request.path %}
+        class="nav-item "
+        {% else %}
+        class="nav-item "
+        {% endif %}>
+            <a id="by-country" 
+            
+            {% if 'search' in request.path %}
+            class="nav-link text-light" style="font-weight: 700;"
+            {% else %}
+            class="nav-link text-light"
+            {% endif %}
+            
+            
+            
+            
+            href="{% url 'search'  %}">Search by Country</a>
+          </li>
+         
+      </ul>
+    
+</div>

@@ -1,0 +1,57 @@
+{% extends 'base.html'  %}
+{% load humanize %}
+{% block content  %}
+
+<div class="container mx-auto search-box ">
+    <form action="{% url 'search' %}" method="POST" >
+      {% csrf_token  %}
+        <div class="form-row align-items-center">
+          <div class="col-sm-10 col-10 ">
+            <input name="place" type="text" class="form-control" id="inlineFormInputName" placeholder="Search Country..." 
+            value="{{value.place}}"
+            >
+        </div>
+        <div class="col-sm-2 col-2">
+            <button id="submit" type="submit" class="btn btn-light text-dark "><i class="fas fa-search"></i></button>
+        </div>
+        </div>
+       
+    </form>
+   </div>
+
+    <!-- Card to show data when searched -->
+   {% if country %}
+    <div class="container ">
+        <div id="country-card" class="card bg-dark">
+            <div class="card-header text-center ">
+              <h1>{{country.Country}}</h1>
+            </div>
+            <div class="card-body">
+              <!-- Table  -->
+
+              <table id="table" class="table table-hover table-dark table-striped">
+                <tbody>
+                  <tr>
+                    <td>Total Cases </td>
+                    <td> {{country.TotalConfirmed | intcomma }} </td>
+                  </tr>
+                  <tr>
+                    <td>Total Recovered</td>
+                    <td>{{country.TotalRecovered | intcomma}}</td>
+                  </tr>
+                  <tr>
+                    <td>Total Deaths</td>
+                    <td>{{country.TotalDeaths | intcomma}}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+    </div>
+
+   
+    {% endif %}
+
+{% endblock %}
